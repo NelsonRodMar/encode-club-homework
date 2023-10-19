@@ -7,3 +7,6 @@
 [submodule "ctf/lib/forge-std"]
 	path = ctf/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "week-2/ExpertSolidityBootcamp/lib/forge-std"]
+	path = ctf/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
