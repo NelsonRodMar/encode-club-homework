@@ -12,6 +12,9 @@ contract Intro {
             // To return it needs to be stored in memory
             // with command mstore(MEMORY_LOCATION, STACK_VARIABLE)
             // to return you need to specify address and the size from the starting point
+            let stack_variable := mol
+            mstore(0, stack_variable)
+            return(0, 0x20)
         }
     }
 }
