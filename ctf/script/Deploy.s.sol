@@ -3,15 +3,15 @@ pragma solidity ^0.8.20;
 
 import {Script, console2 as console} from "forge-std/Script.sol";
 
-import {Level_0} from "../src/Level_0.sol";
+import {Level_1} from "../src/Level_1.sol";
 
 contract CounterScript is Script {
     function setUp() public {}
 
     function run() external {
         vm.startBroadcast();
-        Level_0 lvl0 = new Level_0();
-        console.log("Level_0 address: ", address(lvl0));
+        Level_1 lvl1 = new Level_1();
+        console.log("Level_1 address: ", address(lvl1));
         vm.stopBroadcast();
     }
 }
