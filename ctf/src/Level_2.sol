@@ -8,23 +8,20 @@ contract Level_2 {
         bool swapped;
         uint temp;
         sortedArray = unsortedArray;
-        for (uint i; i < sortedArray.length - 1;) {
-            for (uint j; j < sortedArray.length - i - 1;) {
-                if (sortedArray[j] > sortedArray[j + 1]) {
+        // We use unecheked to avoid the overflow check since we never get overflow (we are sorting 10 elements)
+        unchecked {
+            for (uint i; i < 9; i ++) {
+                for (uint j; j < 9 - i; j++) {
+                    if (sortedArray[j] > sortedArray[j + 1]) {
                     temp = sortedArray[j];
                     sortedArray[j] = sortedArray[j + 1];
                     sortedArray[j + 1] = temp;
-                    swapped = true;
+                    }
+                swapped = true;
                 }
-                unchecked {
-                    j++;
+                if (!swapped) {
+                    break;
                 }
-            }
-            if (!swapped) {
-                break;
-            }
-            unchecked {
-                i++;
             }
         }
     }
