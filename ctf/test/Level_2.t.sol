@@ -14,9 +14,9 @@ contract Level_2Test is Test {
         level2 = new Level_2();
     }
 
-    function testLevel2() public  {
+    function testLevel2() public {
         // Create the same array but unsorted
-        uint256[10] memory unsortedArray = [uint256(7),8,5,9,3,1,6,2,4,10];
+        uint256[10] memory unsortedArray = [uint256(7), 8, 5, 9, 3, 1, 6, 2, 4, 10];
         // Call the solution function
         uint256[10] memory resultSortedArray = level2.solution(unsortedArray);
         // Check if the array is sorted in ascending order
