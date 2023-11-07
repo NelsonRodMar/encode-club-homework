@@ -3,16 +3,20 @@ pragma solidity 0.8.20;
 
 // @author NelsonRodMar.lens
 contract Level_4 {
-    function solution(uint256 numberToTest) external pure returns (uint256 result) {
+    function solution(uint256 numberToTest) external view returns (uint256 result) {
         assembly {
-            function calculateXToTheN(x, n) -> resultTwoToTheN {
+            for { let i := 0 } xor(lt(calculateXToTheN(2, i), numberToTest),eq(calculateXToTheN(2, i), numberToTest)) { i := add(i, 1) } {
+                result := calculateXToTheN(2, i)
+            }
 
-                let i := 0
-                for {} lt(i, sload(n)) {i := add(i, 1)} {
-                    resultTwoToTheN := mul(resultTwoToTheN, sload(n))
+            function calculateXToTheN(x, n) -> resultXToTheN {
+                resultXToTheN := 1
+                for {let i := 0} lt(i, n) {} {
+                    resultXToTheN := mul(resultXToTheN, x)
+                    i := add(i, 1)
                 }
             }
-            for { result := 0 } lt(result, calculateXToTheN(numberToTest, result)) { result := add(result, 1) } {}
         }
+
     }
 }
